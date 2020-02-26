@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import UIKit
+import PlaygroundSupport
+
+class Presentation: UIViewController, UITextFieldDelegate {
+    
+    var label: UILabel!
+    var textView: UITextView!
+    var textField: UITextField!
+    var boton: UIButton!
+    var image: UIImage!
+    var imageView: UIImageView!
+    
+    override func loadView() {
+    
+        let view = UIView(frame: CGRect(x:50, y:50, width: 100, height: 100))
+        view.backgroundColor = .black
+        
+        textField = UITextField(frame: CGRect(x:200, y:400, width:300, height:50))
+        textField.textColor = .black
+        textField.backgroundColor = .white
+        view.addSubview(textField)
+        
+        label = UILabel(frame: CGRect(x:200, y:500, width:300, height:50))
+        label.backgroundColor = .white
+        label.textColor = .black
+        view.addSubview(label)
+        
+        boton = UIButton(frame: CGRect(x:250, y:600, width:200, height:40))
+        boton.backgroundColor = .blue
+        boton.setTitle("Presiona por favor 🥺", for: UIControl.State.normal)
+        view.addSubview(boton)
+        
+        textView = UITextView(frame: CGRect(x:200, y:700, width:300, height:200))
+        textView.backgroundColor = .white
+        textView.textColor = .black
+        view.addSubview(textView)
+        
+        image = UIImage(named: "imagenGoya.jpg")
+        imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x:250, y: 50, width:200, height:300)
+        view.addSubview(imageView)
+        self.view = view
+        
+        boton.addTarget(self, action: #selector(transpotition), for: UIControl.Event.allTouchEvents)
+        
+    }
+    
+    @IBAction func transpotition() {
+        self.label.text = textField.text
+    }
+    
+}
+
+PlaygroundPage.current.liveView = Presentation()
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1762}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
